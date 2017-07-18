@@ -5,7 +5,7 @@ import Scanner from '../Scanner';
 import Sender from  '../Sender';
 import Receiver from '../Receiver';
 import WIFPage from '../WIFPage';
-import 'wallet/shim' // make sure to use es6 import and not require()
+import '../../shim' // make sure to use es6 import and not require()
 import Bitcoin from 'react-native-bitcoinjs-lib'
 var RNFS = require('react-native-fs');
 const styles = StyleSheet.create({
