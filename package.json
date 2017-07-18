@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "rn-nodeify --install stream,buffer,events,assert --hack"
+    "postinstall": "rn-nodeify --install stream,buffer,events,assert,crypto --hack"
   },
   "dependencies": {
     "assert": "^1.4.1",
@@ -14,6 +14,7 @@
     "react-native-bitcoinjs-lib": "^2.3.9",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-deprecated-custom-components": "^0.1.0",
+    "react-native-fs": "^2.3.3",
     "react-native-material-ui": "^1.12.0",
     "react-native-qrcode-scanner": "0.0.12",
     "react-native-randombytes": "^2.2.0",
@@ -25,6 +26,7 @@
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
     "jest": "20.0.4",
+    "react-native-qrcode": "^0.2.3",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "jest": {
@@ -36,7 +38,8 @@
     "_stream_writable": "readable-stream/writable",
     "_stream_duplex": "readable-stream/duplex",
     "_stream_passthrough": "readable-stream/passthrough",
-    "stream": "stream-browserify"
+    "stream": "stream-browserify",
+    "crypto": "react-native-crypto"
   },
   "browser": {
     "_stream_transform": "readable-stream/transform",
@@ -44,6 +47,7 @@
     "_stream_writable": "readable-stream/writable",
     "_stream_duplex": "readable-stream/duplex",
     "_stream_passthrough": "readable-stream/passthrough",
-    "stream": "stream-browserify"
+    "stream": "stream-browserify",
+    "crypto": "react-native-crypto"
   }
 }
