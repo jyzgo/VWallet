@@ -13,5 +13,5 @@ export default function index() {
         }
     }
 
-    AppRegistry.registerComponent('VMWallet', () => Root);
+    AppRegistry.registerComponent('vWallet', () => Root);
 }

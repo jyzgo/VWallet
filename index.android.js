@@ -4,6 +4,7 @@
  * @flow
  */
 
+import './shim.js';
 import React, { Component } from 'react';
 import {
   AppRegistry,
