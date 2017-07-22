@@ -111,7 +111,7 @@ class Home extends Component {
         return (
             <Toolbar
                 key="toolbar"
-                leftElement="menu"
+                // leftElement="menu"
                 onLeftElementPress={() => this.props.navigator.pop()}
                 centerElement={this.props.route.title}
                 searchable={{
@@ -135,7 +135,7 @@ class Home extends Component {
                 style={{container:{height:70},primaryText:{fontSize:20}}}
                 divider
                 leftElement={<Avatar text={title[0]} />}
-                onLeftElementPress={() => this.onAvatarPressed(title)}
+                // onLeftElementPress={() => this.onAvatarPressed(title)}
                 centerElement={title}
                 onPress={() => this.props.navigator.push(route)}
             />
@@ -160,64 +160,64 @@ class Home extends Component {
                     {/*{this.renderItem('Badge', routes.badge)}*/}
                     {/*{this.renderItem('Bottom navigation', routes.bottomNavigation)}*/}
                     {/*{this.renderItem('Buttons', routes.button)}*/}
-                    {/*{this.renderItem('Cards', routes.card)}*/}
-                    {/*{this.renderItem('Checkbox', routes.checkbox)}*/}
-                    {/*{this.renderItem('Dialog', routes.dialog)}*/}
-                    {/*{this.renderItem('Drawer', routes.drawer)}*/}
-                    {/*{this.renderItem('Icon toggles', routes.iconToggle)}*/}
-                    {/*{this.renderItem('List items', routes.list)}*/}
-                    {/*{this.renderItem('Radio buttons', routes.radioButton)}*/}
-                    {/*{this.renderItem('Toolbars', routes.toolbar)}*/}
+                  {/*{this.renderItem('Cards', routes.card)}*/}
+                  {/*{this.renderItem('Checkbox', routes.checkbox)}*/}
+                  {/*{this.renderItem('Dialog', routes.dialog)}*/}
+                  {/*{this.renderItem('Drawer', routes.drawer)}*/}
+                  {/*{this.renderItem('Icon toggles', routes.iconToggle)}*/}
+                  {/*{this.renderItem('List items', routes.list)}*/}
+                  {/*{this.renderItem('Radio buttons', routes.radioButton)}*/}
+                  {/*{this.renderItem('Toolbars', routes.toolbar)}*/}
                 </ScrollView>
-                <ActionButton
-                    actions={[
-                        { icon: 'email', label: 'Email' },
-                        { icon: 'phone', label: 'Phone' },
-                        { icon: 'sms', label: 'Text' },
-                        { icon: 'favorite', label: 'Favorite' },
-                    ]}
-                    hidden={this.state.bottomHidden}
-                    icon="share"
-                    transition="speedDial"
-                    onPress={(action) => {
-                        if (Platform.OS === 'android') {
-                            ToastAndroid.show(action, ToastAndroid.SHORT);
-                        }
-                    }}
-                    style={{
-                        positionContainer: { bottom: 76 },
-                    }}
-                />
-                <BottomNavigation
-                    active={this.state.active}
-                    hidden={this.state.bottomHidden}
-                    style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0 } }}
-                >
-                    <BottomNavigation.Action
-                        key="today"
-                        icon={<Icon name="today" />}
-                        label="Today"
-                        onPress={() => this.setState({ active: 'today' })}
-                    />
-                    <BottomNavigation.Action
-                        key="people"
-                        icon="people"
-                        label="People"
-                        onPress={() => this.setState({ active: 'people' })}
-                    />
-                    <BottomNavigation.Action
-                        key="bookmark-border"
-                        icon="bookmark-border"
-                        label="Bookmark"
-                        onPress={() => this.setState({ active: 'bookmark-border' })}
-                    />
-                    <BottomNavigation.Action
-                        key="settings"
-                        icon="settings"
-                        label="Settings"
-                        onPress={() => this.setState({ active: 'settings' })}
-                    />
-                </BottomNavigation>
+                {/*<ActionButton*/}
+                  {/*actions={[*/}
+                    {/*{ icon: 'email', label: 'Email' },*/}
+                    {/*{ icon: 'phone', label: 'Phone' },*/}
+                    {/*{ icon: 'sms', label: 'Text' },*/}
+                    {/*{ icon: 'favorite', label: 'Favorite' },*/}
+                  {/*]}*/}
+                  {/*hidden={this.state.bottomHidden}*/}
+                  {/*icon="share"*/}
+                  {/*transition="speedDial"*/}
+                  {/*onPress={(action) => {*/}
+                    {/*if (Platform.OS === 'android') {*/}
+                      {/*ToastAndroid.show(action, ToastAndroid.SHORT);*/}
+                    {/*}*/}
+                  {/*}}*/}
+                  {/*style={{*/}
+                    {/*positionContainer: { bottom: 76 },*/}
+                  {/*}}*/}
+                {/*/>*/}
+              {/*<BottomNavigation*/}
+              {/*active={this.state.active}*/}
+              {/*hidden={this.state.bottomHidden}*/}
+              {/*style={{ container: { position: 'absolute', bottom: 0, left: 0, right: 0 } }}*/}
+              {/*>*/}
+              {/*<BottomNavigation.Action*/}
+              {/*key="today"*/}
+              {/*icon={<Icon name="today" />}*/}
+              {/*label="Today"*/}
+              {/*onPress={() => this.setState({ active: 'today' })}*/}
+              {/*/>*/}
+              {/*<BottomNavigation.Action*/}
+              {/*key="people"*/}
+              {/*icon="people"*/}
+              {/*label="People"*/}
+              {/*onPress={() => this.setState({ active: 'people' })}*/}
+              {/*/>*/}
+              {/*<BottomNavigation.Action*/}
+              {/*key="bookmark-border"*/}
+              {/*icon="bookmark-border"*/}
+              {/*label="Bookmark"*/}
+              {/*onPress={() => this.setState({ active: 'bookmark-border' })}*/}
+              {/*/>*/}
+              {/*<BottomNavigation.Action*/}
+              {/*key="settings"*/}
+              {/*icon="settings"*/}
+              {/*label="Settings"*/}
+              {/*onPress={() => this.setState({ active: 'settings' })}*/}
+              {/*/>*/}
+              {/*</BottomNavigation>*/}
             </Container>
 
 

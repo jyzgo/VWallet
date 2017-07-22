@@ -9,10 +9,6 @@ const propTypes = {
   route: PropTypes.object.isRequired,
 };
 
-const raisedButton={
-  container:{height:50}
-
-};
 
 class Receiver extends Component {
 

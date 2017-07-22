@@ -1,6 +1,6 @@
-import { Clipboard, View, StyleSheet,Alert } from 'react-native';
+import {Clipboard, View, StyleSheet,Alert } from 'react-native';
 import React, { Component, PropTypes } from 'react';
-import {Subheader, Button,Toolbar } from 'react-native-material-ui';
+import { Subheader, Button} from 'react-native-material-ui';
 import Scanner from '../Scanner';
 import Sender from  '../Sender';
 import Receiver from '../Receiver';
@@ -57,17 +57,25 @@ class CoinWindow extends Component {
     this.wifKey="";
     this.address ="";
 
+    this.state = {
+      selected: [],
+      searchText: '',
+      toolbarHidden: false,
+      active: 'people',
+      moveAnimated: new Animated.Value(0),
+    };
+
   }
 
   CheckPRExist()
   {
     RNFS.exists(this.fileName).then((isExists)=>{
         if(isExists) {
-         RNFS.readFile(this.fileName).then((content)=>{
+          RNFS.readFile(this.fileName).then((content)=>{
             this.wifKey = content;
             var key = Bitcoin.ECPair.fromWIF(content);
             this.address = key.getAddress();
-         })
+          })
         }else
         {
           this.AlertCreate();
@@ -125,15 +133,15 @@ class CoinWindow extends Component {
 
   onShowYourWIF()
   {
-     Alert.alert(
-       'WARNING!',
-       'WIF PAGE!DO NOT SHOW ANY ONE THIS PAGE!!',
-       [
-         {text: 'OK', onPress:()=> this.props.navigator.push({Page:WIFPage,wif:this.wifKey})},
-         {text: 'Cancel'}
-       ],
-       { cancelable: false }
-     )
+    Alert.alert(
+      'WARNING!',
+      'WIF PAGE!DO NOT SHOW ANY ONE THIS PAGE!!',
+      [
+        {text: 'OK', onPress:()=> this.props.navigator.push({Page:WIFPage,wif:this.wifKey})},
+        {text: 'Cancel'}
+      ],
+      { cancelable: false }
+    )
 
   }
 
@@ -144,8 +152,10 @@ class CoinWindow extends Component {
         <View style={styles.vcontainer}>
 
           <View style={styles.rowContainer}>
-            <Subheader  style = {{text:{fontSize:20}}} text="Send Money" />
+            <Subheader  style = {{text:{fontSize:20}}} text="Money Transfer" />
           </View>
+
+          <Subheader  style = {{text:{fontSize:15}}} text="Send Money" />
           <View style={styles.rowContainer}>
             <View style={styles.button}>
               <Button raised primary upperCase={false} text="Scan QR code" style={raisedButton} icon="camera-enhance" onPress={()=>this.onScan()} />
@@ -156,6 +166,9 @@ class CoinWindow extends Component {
               <Button raised primary upperCase={false} text="Pay address from clipboard" style={raisedButton} onPress={()=>this.onCopyFromClipboard()}/>
             </View>
           </View>
+
+          <Subheader  style = {{text:{fontSize:15}}} text="Receive Money" />
+
           <View style={styles.rowContainer}>
             <View style={styles.clipbutton}>
               <Button raised primary upperCase={false} text="Receive Money" style={raisedButton} onPress={()=>this.onReceiveMoney()}/>
